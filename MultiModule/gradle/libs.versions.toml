@@ -1,42 +1,165 @@
 [versions]
-agp = "8.6.1"
+# Android Gradle Plugin
+androidGradlePlugin = "8.6.1"
+androidTools = "31.7.1"
+
+# Project versions
+projectApplicationId = "com.example.multimodule"
+projectVersionName = "1.0"
+projectVersionCode = "1"
+projectMinSdkVersion = "24"
+projectTargetSdkVersion = "34"
+projectCompileSdkVersion = "34"
+
+
+# jdk
+desugar_jdk_libs = "2.1.2"
+
+
+# Kotlin
 kotlin = "2.0.20"
+
+
+# Androidx
 coreKtx = "1.13.1"
+lifecycleRuntimeKtx = "2.8.6"
+activityCompose = "1.9.2"
+appcompat = "1.7.0"
+
+
+# Kotlin Symbol Processing
+ksp = "2.0.20-1.0.24"
+
+
+# Compose
+composeBom = "2024.09.03"
+runtimeAndroid = "1.7.3"
+
+
+# Material Design
+material = "1.12.0"
+
+
+# Dependency Injection
+hiltAndroid = "2.52"
+javax-inject = "1"
+
+
+# Test
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
-lifecycleRuntimeKtx = "2.8.6"
-activityCompose = "1.9.2"
-composeBom = "2024.04.01"
-jetbrainsKotlinJvm = "1.9.0"
-appcompat = "1.7.0"
-material = "1.12.0"
+monitor = "1.7.2"
+junitKtx = "1.2.1"
+testng = "6.9.6"
+jetbrainsKotlinJvm = "2.0.20"
+activityKtx = "1.9.2"
+
+
+
+
+
+
 
 [libraries]
-android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp"}
-kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
-
-
-androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+# Dependencies of the included build-logic
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
+android-tools-common = { group = "com.android.tools", name = "common", version.ref = "androidTools" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
-androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+
+desugar-jdk-libs = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugar_jdk_libs" }
+
+
+# Androidx
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
-androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
-androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
-androidx-ui = { group = "androidx.compose.ui", name = "ui" }
-androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
-androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
-androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
-androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
-androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
-androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+
+
+# Compose
+androidx-compose-bom = { module = "androidx.compose:compose-bom", version.ref = "composeBom" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycleRuntimeKtx" }
+androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycleRuntimeKtx" }
+androidx-runtime-android = { group = "androidx.compose.runtime", name = "runtime-android", version.ref = "runtimeAndroid" }
+androidx-ui = { group = "androidx.compose.ui", name = "ui"}
+androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics"}
+androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling"}
+androidx-material3 = { group = "androidx.compose.material3", name = "material3"}
+androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview"}
+androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest"}
+androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4"}
+androidx-ui-graphics-android = { group = "androidx.compose.ui", name = "ui-graphics-android"}
+androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation" }
+
+
+# Material Design
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
+
+# Dependency Injection
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
+hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroid" }
+javax-inject = { group = "javax.inject", name = "javax.inject", version = "javax-inject" }
+
+
+#Test
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-monitor = { group = "androidx.test", name = "monitor", version.ref = "monitor" }
+androidx-junit-ktx = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "junitKtx" }
+testng = { group = "org.testng", name = "testng", version.ref = "testng" }
+androidx-activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activityKtx" }
+
+
+
+[bundles]
+compose = [
+    "androidx-activity-compose",
+    "androidx-lifecycle-runtime-compose",
+    "androidx-lifecycle-viewmodel-compose",
+    "androidx-material3",
+    "androidx-runtime-android",
+    "androidx-ui",
+    "androidx-ui-graphics",
+    "androidx-ui-tooling-preview",
+    "androidx-ui-graphics-android"
+]
+
+compose-debug = [
+    "androidx-ui-tooling",
+    "androidx-ui-test-manifest"
+]
+
+
+
+
 [plugins]
-android-application = { id = "com.android.application", version.ref = "agp" }
+# Android Build Tools
+android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
+
+# Kotlin
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+
+# Custom Convention Plugin
+multimodule-android-application = { id = "multimodule.android.application", version = "unspecified" }
+multimodule-android-application-compose = { id = "multimodule.android.application.compose", version = "unspecified" }
+multimodule-android-library = { id = "multimodule.android.library", version = "unspecified" }
+multimodule-android-library-compose = { id = "multimodule.android.library.compose", version = "unspecified" }
+multimodule-android-compose-ui = { id = "multimodule.android.compose.ui", version = "unspecified" }
+
+
+
+# Kotlin Symbol Processing
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+
+# Compose
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+
+# Dependency Injection
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hiltAndroid"}
 jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
-android-library = { id = "com.android.library", version.ref = "agp" }
 

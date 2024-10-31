@@ -1,6 +1,5 @@
 pluginManagement {
     includeBuild("build-logic")
-
     repositories {
         google {
             content {
@@ -21,9 +20,11 @@ dependencyResolutionManagement {
     }
 }
 
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 rootProject.name = "MultiModule"
 include(":app")
+include(":core:design-system")
 include(":feature:main")
-include(":feature:home")
-include(":core:data")
-include(":core:domain")
+include(":feature:mypage")
+include(":feature:community")
+include(":core:navigation")
