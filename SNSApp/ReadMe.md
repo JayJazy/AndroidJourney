@@ -1,3 +1,1 @@
-## commit
-
-### 1. Project Setting
+## SNS 데모 앱 입니다
